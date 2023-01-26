@@ -32,10 +32,10 @@ rm ./get-updates.sh
 rm ./md5-hashes
 
 # Aquire new files
-wget -q http://192.168.1.54/sys-maint.sh
-wget -q http://192.168.1.54/startup.sh
-wget -q http://192.168.1.54/get-updates.sh
-wget -q http://192.168.1.54/md5-hashes
+wget -q https://github.com/daknit/git-scripts/sys-maint.sh
+wget -q http://github.com/daknit/git-scripts/startup.sh
+wget -q http://github.com/daknit/git-scripts/get-updates.sh
+wget -q http://github.com/daknit/git-scripts/md5-hashes
 
 # Change ownership to get it away from root
 chown "$user" sys-maint.sh

@@ -35,10 +35,10 @@ chown $user $path
 # Get the scripts and MD5 hashes file
 echo "Downloading scripts."
 
-wget -q http://192.168.1.54/startup.sh
-wget -q http://192.168.1.54/sys-maint.sh
-wget -q http://192.168.1.54/get-updates.sh
-wget -q http://192.168.1.54/md5-hashes
+wget -q http://github.com/daknit/git-scripts/startup.sh
+wget -q http://github.com/daknit/git-scripts/sys-maint.sh
+wget -q http://github.com/daknit/git-scripts/get-updates.sh
+wget -q http://github.com/daknit/git-scripts/md5-hashes
 echo "Downloads complete."
 # Move everything that we just downloaded where our user specified and cleanup the
 # originals.
