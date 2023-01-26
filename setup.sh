@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This script will download and install my scripts. This command must be run as root.
-# v1.1.0
+# v1.1.1
 # Written by Chris Shafer - Christopher.Shafer@cwu.edu
 #
 # Syntax: sudo bash setup.sh <directory where scripts will live>
@@ -11,6 +11,7 @@
 # the other files when they are created instead of hardcoding my file paths and username.
 #
 # 25/1/2023: Added hash verification and more comments.
+# 27/1/2023: Now uses github so we can get off the intranet.
 
 # In order to make the other scripts more modular, we're making a script.config file which
 # the other scripts can loop through to get their path and user variables.
@@ -35,10 +36,10 @@ chown $user $path
 # Get the scripts and MD5 hashes file
 echo "Downloading scripts."
 
-wget -q http://github.com/daknit/git-scripts/startup.sh
-wget -q http://github.com/daknit/git-scripts/sys-maint.sh
-wget -q http://github.com/daknit/git-scripts/get-updates.sh
-wget -q http://github.com/daknit/git-scripts/md5-hashes
+wget -q http://daknit.github.io/git-scripts/startup.sh
+wget -q http://daknit.github.io/git-scripts/sys-maint.sh
+wget -q http://daknit.github.io/git-scripts/get-updates.sh
+wget -q http://daknit.github.io/git-scripts/md5-hashes
 echo "Downloads complete."
 # Move everything that we just downloaded where our user specified and cleanup the
 # originals.

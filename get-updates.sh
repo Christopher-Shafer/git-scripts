@@ -1,13 +1,14 @@
 #!/bin/bash
 
 # This script will download any new updates from the web space and replace older versions.
-# v1.0.3
+# v1.1.0
 # Written by Chris Shafer - Christopher.Shafer@cwu.edu
 
 # Changelog
 # 24/1/2023: added -q to wget and removed unnecessary rms.
 # 25/1/2023: added variable path support for setup script.
 # 26/1/2023: Added more complex modular support and hash checking.
+# 27/1/2023: Modified to use the github files to get off the intranet.
 #
 # Note to self: I need to add hash support to this so that we check files on updates.
 
@@ -32,10 +33,10 @@ rm ./get-updates.sh
 rm ./md5-hashes
 
 # Aquire new files
-wget -q https://github.com/daknit/git-scripts/sys-maint.sh
-wget -q http://github.com/daknit/git-scripts/startup.sh
-wget -q http://github.com/daknit/git-scripts/get-updates.sh
-wget -q http://github.com/daknit/git-scripts/md5-hashes
+wget -q https://daknit.github.io/git-scripts/sys-maint.sh
+wget -q http://daknit.github.io/git-scripts/startup.sh
+wget -q http://daknit.github.io/git-scripts/get-updates.sh
+wget -q http://daknit.github.io/git-scripts/md5-hashes
 
 # Change ownership to get it away from root
 chown "$user" sys-maint.sh
