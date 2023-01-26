@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Chris Shafer">
+    <title>The Fundamental Manual</title>
+  </head>
+  <body>
+    <center><h1>The Fundamental Manual</h1></center>
+    <h2>Introduction</h2>
+    <p>This manual will serve as a simple set of instructions to get my scripts running on any linux system. The purpose of the scripts is to ease system maintenance by providing a central script to run on startup to launch necessary programs, and a regular maintenance script to keep programs up to date, as well as the supporting scripts necessary for those. Complete documentation for these scripts is in the comments of each script and if there are any conflicts between this document and those comments, the comments will supersede.</p>
+    <h2>Setup</h2>
+    <p>The setup.sh script serves to "install" the script tools. The script will install the dependencies the other scripts will need, such as the plocate command. The script will also activate /etc/rc.local and it's service if necessary. It will also perform a maintenance sweep before beginning to ensure the system is up to date. For all these reasons, this script MUST be run by root.</p>
+    <p>The script needs two arguments: the first argument will specify the location to install the scripts to. Ex: /home/daknit/scripts. This location does not need to exist before running the script. The second argument is the user who will actually own the scripts. This is so that the scripts can be owned by a real user and not root so they can be edited as to get them working. Ideally no editing will be required but...</p>
+    <blockquote>daknit@ubuntu$ sudo setup.sh /home/daknit/scripts daknit</blockquote>
+    <h2>Get-update</h2>
+    <p>This script will get new updates from this site as well as the md5-hashes file. It will install the updates and verify the hashes. This script is added automatically to the crontab and will trigger per its entry on that table.</p>
+    <h2>Startup</h2>
+    <p>This script will execute any code placed into it on bootup. By default it will update the MOTD with the date and time the boot happens to indicate the script is working and an example command is presented to launch a program.</p>
+    <h2>Sys-maint</h2>
+    <p>This script runs four maintenance commands that together have the effect of running updates and upgrades as well as cleanups to improve performance. These cleanups are non-intrusive and fire at midnight. Logs are created that will be output to /logs/ for review of exact changes in case that becomes necessary.</p>
+    <h2>MD5-hashes</h2>
+    <p>This is an accompaniment file which contains the MD5 checksum values of each of the scripts. This file needs to be kept with the scripts, which will use it to verify no hinky behavior occurs between this site and your site.</p>
+    <h3>FAQ</h3>
+    <dl>
+      <dt>Coming soon...</dt>
+      <dd>This section is coming soon!</dd>
+    </dl>
+    <footer>&copy; 2023 <a href="mailto://Christopher.Shafer@cwu.edu">Christopher Shafer</a></footer>
+  </body>
+</html>
